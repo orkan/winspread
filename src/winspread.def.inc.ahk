@@ -16,4 +16,4 @@ ini.example
    , posoffX: "-8"
    , posoffY: "200"
    , sleep: "200       - pause in between window operations (optional)"
-   , title: "Windows ahk_class CabinetWClass - identify this window"}
+   , title: "Windows ahk_class CabinetWClass - identify this window after creation for future processing"}
