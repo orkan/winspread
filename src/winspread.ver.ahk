@@ -1,2 +1,2 @@
-git_version := "v0.0.1" 
-git_revision := "c7cb6d1" 
+git_version := "v0.1.0" 
+git_revision := "d4aa75e" 

@@ -5,3 +5,5 @@
 *.gz
 *.rar
 *.lnk
+src/symlink.ini
+src/symlink.ver.ahk

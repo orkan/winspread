@@ -1,12 +1,4 @@
-;#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-#Warn  ; Enable warnings to assist with detecting common errors.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-;SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-;Loop %0%  ; For each file dropped onto the script (or passed as a parameter).
-;#NoTrayIcon
-;#SingleInstance force
-;SetWinDelay, 200
-
+SendMode Input
 #Include ..\lib\orkan.lib.inc.ahk
 #Include winspread.ver.ahk
 #Include winspread.def.inc.ahk
@@ -22,6 +14,7 @@ ini.example := example ; restore [example] section
 WriteINI(ini, name_ini)
 
 ;###################################################################################################
+; Check startup arguments
 if (%0%) {
     Progress, B R0-%0% w400 fs11, %A_Space%, % Format("{:T} {:s}", base_name, get_version(git_version))
 }
@@ -42,7 +35,6 @@ loop %0%
     cmd .= obj.param ? " " obj.param : ""
     err := false
 
-    ; Checks
     if (!obj.cmd)
         err := "epmty [cmd]"
     if (!obj.title)
@@ -56,7 +48,7 @@ loop %0%
     {
         Run, % cmd
         WinWaitActive, % obj.title
-        WinGet, _hWnd, ID, A ;  % "ahk_id" _hWnd
+        WinGet, _hWnd, ID, A
         
         ; send keyboard messages to this window?
         if (obj.poskeys) {
@@ -87,15 +79,3 @@ loop %0%
 }
 
 ExitApp
-
-;###################################################################################################
-; TIPS TIPS TIPS TIPS TIPS TIPS TIPS TIPS TIPS TIPS TIPS TIPS TIPS TIPS TIPS TIPS TIPS TIPS TIPS TIPS 
-;###################################################################################################
-
-;~ #Include ..\..\_ahk\lib\CustomBoxes\TreeBox.ahk
-;~ TreeBox(ini, "ini:")
-;~ MsgBox
-
-;~ [HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
-;~ "BorderWidth"="-15"
-;~ "PaddedBorderWidth"="-60"
