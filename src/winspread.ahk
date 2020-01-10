@@ -51,24 +51,24 @@ loop %0%
         WinGet, _hWnd, ID, A
         
         ; send keyboard messages to this window?
-        if (obj.poskeys) {
-            Send % obj.poskeys
+        if (obj.keys) {
+            Send % obj.keys
             Sleep, % slp
         }
 
         ; move this window?
-        if (obj.posmoveX or obj.posmoveY or obj.posmoveW or obj.posmoveH) {
-            WinMove,,, % obj.posmoveX, % obj.posmoveY, % obj.posmoveW, % obj.posmoveH
+        if (obj.moveX or obj.moveY or obj.moveW or obj.moveH) {
+            WinMove,,, % obj.moveX, % obj.moveY, % obj.moveW, % obj.moveH
             Sleep, % slp
         }
         
         ; extra offset this window?
-        if (obj.posoffX or obj.posoffY or obj.posoffW or obj.posoffH) {
+        if (obj.offsetX or obj.offsetY or obj.offsetW or obj.offsetH) {
             WinGetPos tmpX, tmpY, tmpW, tmpH, % "ahk_id" _hWnd
-            tmpX := obj.posoffX ? tmpX + obj.posoffX : tmpX
-            tmpY := obj.posoffY ? tmpY + obj.posoffY : tmpY
-            tmpW := obj.posoffW ? tmpW + obj.posoffW : tmpW
-            tmpH := obj.posoffH ? tmpH + obj.posoffH : tmpH
+            tmpX := obj.offsetX ? tmpX + obj.offsetX : tmpX
+            tmpY := obj.offsetY ? tmpY + obj.offsetY : tmpY
+            tmpW := obj.offsetW ? tmpW + obj.offsetW : tmpW
+            tmpH := obj.offsetH ? tmpH + obj.offsetH : tmpH
             WinMove, % "ahk_id" _hWnd,, % tmpX, % tmpY, % tmpW, % tmpH
         }
     }
