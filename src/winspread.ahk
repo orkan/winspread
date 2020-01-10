@@ -41,7 +41,6 @@ loop %0%
         err := "epmty [title]"
     
     cmd := err ? "Error! " err : cmd
-    slp := err ? ini.settings.ErrorTimeout : obj.sleep
 	Progress, % A_Index, % str_reduce("[" key "]: " . cmd, 60)
     
     if (!err)
@@ -53,13 +52,13 @@ loop %0%
         ; send keyboard messages to this window?
         if (obj.keys) {
             Send % obj.keys
-            Sleep, % slp
+            Sleep, % obj.sleep
         }
 
         ; move this window?
         if (obj.moveX or obj.moveY or obj.moveW or obj.moveH) {
             WinMove,,, % obj.moveX, % obj.moveY, % obj.moveW, % obj.moveH
-            Sleep, % slp
+            Sleep, % obj.sleep
         }
         
         ; extra offset this window?
@@ -74,7 +73,7 @@ loop %0%
     }
     else 
     {
-        Sleep, % slp
+        Sleep, % ini.settings.ErrorTimeout ; keep the error msg for a while
     }
 }
 
