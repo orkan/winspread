@@ -1,0 +1,7 @@
+/etc/
+/bin/
+/test/
+/.settings/
+*.gz
+*.rar
+*.lnk
