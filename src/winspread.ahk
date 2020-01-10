@@ -1,7 +1,7 @@
 SendMode Input
 #Include ..\lib\orkan.lib.inc.ahk
+#Include winspread.def.ahk
 #Include winspread.ver.ahk
-#Include winspread.def.inc.ahk
 
 base_name := "winspread"
 base_url := "https://github.com/orkan/winspread"
