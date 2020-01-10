@@ -3,10 +3,10 @@ AutoHotkey script to spread out windows across desktop space. Driven with cmd li
 
 ## Basic features:
 
-This script will let you launch a group of different windows after clicking one shortcut only. You can define the order and position of each individual window.
+This script will let you launch a number of windows after clicking one shortcut only. You can define the order and position of each window individualy via INI file.
 
 Syntax is:
-`winspread.exe section1 [section2 section3 ...]`
+`winspread section1 [section2 section3 ...]`
 
 Each parameter is a separate INI section, with the following settings:
 * **cmd** - path to application
@@ -17,7 +17,7 @@ Each parameter is a separate INI section, with the following settings:
 * **offset[X,Y,W,H]** - offset window by specified pixels after creation (+/-)
 * **sleep** - pause in between operations (ms)
 
-Example INI section:
+## Example INI section:
 ```
 [Windows]
 cmd=explorer.exe
@@ -27,7 +27,7 @@ keys=#{left}
 sleep=200
 ```
 Create a shortcut with location: `winspread.exe Windows`
-This will open a Windows Explorer window, occupying the left half of the desktop, with selected C:\Windows directory in the side panel
+This will open a Windows Explorer window, occupying the left half of the desktop, with selected `C:\Windows` directory in the side panel
 
 ## Requirements
 

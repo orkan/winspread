@@ -19,7 +19,7 @@ if (%0%) {
     Progress, B R0-%0% w400 fs11, %A_Space%, % Format("{:T} {:s}", base_name, get_version(git_version))
 }
 else {
-    MsgBox, 64, % Format("{:T} {:s} (rev. {:s})", base_name, git_version, git_revision), % "This program is intended to spread out windows across your desktop space. Check out <" name_ini "> [example] section for more information how to define your windows. Syntax is:`n`n" base_name ".exe section1 [section2 section3 ...]`n`n2020 © Orkan <orkans@gmail.com>`n" base_url
+    MsgBox, 64, % Format("{:T} {:s} (rev. {:s})", base_name, git_version, git_revision), % "This program is intended to spread out windows across your desktop. Syntax is:`n`n        " base_name " section1 [section2 section3 ...]`n`nCheck out <" name_ini "> [example] section for more information on how to define your own windows.`n`nCopyright 2020 Orkan <orkans@gmail.com>`n" base_url
 }
 
 ;###################################################################################################
