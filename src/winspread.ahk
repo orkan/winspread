@@ -31,16 +31,22 @@ loop %0%
 {
     key := A_Args[A_Index]
     obj := ini[key]
-    cmd := obj.cmd
-    cmd .= obj.param ? " " obj.param : ""
     err := false
-
-    if (!obj.cmd)
+    
+    if (!obj)
+        err := "missing section"
+    else if (!obj.cmd)
         err := "epmty [cmd]"
-    if (!obj.title)
+    else if (!obj.title)
         err := "epmty [title]"
     
-    cmd := err ? "Error! " err : cmd
+    if (!err) {
+        cmd := obj.cmd
+        cmd .= obj.param ? " " obj.param : ""
+    }
+    else
+        cmd := "Error! " err
+    
 	Progress, % A_Index, % str_reduce("[" key "]: " . cmd, 60)
     
     if (!err)
