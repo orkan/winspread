@@ -5,5 +5,5 @@
 *.gz
 *.rar
 *.lnk
-src/symlink.ini
-src/symlink.ver.ahk
+src/winspread.ini
+src/winspread.ver.ahk
