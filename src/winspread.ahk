@@ -47,7 +47,7 @@ loop %0%
     else
         cmd := "Error! " err
     
-	Progress, % A_Index, % str_reduce("[" key "]: " . cmd, 60)
+	Progress, % A_Index, % str_reduce("[" key "] " . cmd, 60)
     
     if (!err)
     {
