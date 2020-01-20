@@ -63,7 +63,7 @@ loop %0%
 
         ; move this window?
         if (obj.moveX or obj.moveY or obj.moveW or obj.moveH) {
-            WinMove,,, % obj.moveX, % obj.moveY, % obj.moveW, % obj.moveH
+            WinMove, % "ahk_id" _hWnd,, % obj.moveX, % obj.moveY, % obj.moveW, % obj.moveH
             Sleep, % obj.sleep
         }
         
