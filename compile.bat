@@ -5,7 +5,7 @@ if "%OS%"=="Windows_NT" setlocal
 
 @rem ***************************
 set NAME=winspread
-set ICON=/icon "res\explorer.exe,252.ico"
+set ICON=/icon "res\winspread.ico"
 @rem ***************************
 
 git describe --tags --abbrev=0 > bin\git_ver.txt
